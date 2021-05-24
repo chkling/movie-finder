@@ -1,9 +1,10 @@
 import "./App.css";
+import MovieContainer from "./components/MovieContainer";
 
 function App() {
 	return (
 		<div className="App">
-			<h1>Movie Finder</h1>
+			<MovieContainer />
 		</div>
 	);
 }
