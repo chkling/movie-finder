@@ -4,10 +4,6 @@ import Movies from "./Movies";
 export default function MovieContainer() {
 	const [movies, setMovies] = useState([]);
 	const [search, setSearch] = useState("");
-	const [title, setTitle] = useState("");
-	const [year, setYear] = useState("");
-	const [poster, setPoster] = useState("");
-	const [plot, setPlot] = useState("");
 
 	const getMovies = async () => {
 		const response = await fetch(
@@ -18,18 +14,10 @@ export default function MovieContainer() {
 		);
 		const json = await response.json();
 		console.log(json);
-		// setTitle(json.Title);
-		// setYear(json.Year);
-		// setPoster(json.Poster);
-		// setPlot(json.Plot);
 		setMovies(json.Search);
-		// setMovies([...movies, json.Title]);
-		// movies.push(json.Title, json.Year, json.Poster);
 	};
 
-	useEffect(() => {
-		// getMovies();
-	}, []);
+	useEffect(() => {}, []);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -58,26 +46,9 @@ export default function MovieContainer() {
 			</div>
 			<div class="movie-container">
 				{movies.map((movie) => (
-					<Movies title={movie.Title} poster={movie.Poster} />
+					<Movies title={movie.Title} poster={movie.Poster} year={movie.Year} />
 				))}
 			</div>
-
-			{/* <ul>
-				{movies.length === 0 ? (
-					<p>""</p>
-				) : (
-					movies.map((moviesFromCache) => (
-						<Movies movies={moviesFromCache} setMovies={setMovies} />
-					))
-				)}
-			</ul>
-			<button
-				onClick={() => {
-					getMovies();
-				}}
-			>
-				New Movie
-			</button> */}
 		</div>
 	);
 }
