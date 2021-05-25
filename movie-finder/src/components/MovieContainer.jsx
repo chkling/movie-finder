@@ -10,8 +10,6 @@ export default function MovieContainer() {
 	const [plot, setPlot] = useState("");
 
 	const getMovies = async () => {
-		// `http://www.omdbapi.com/?t=${title}&apikey=802325f4`
-		// "http://www.omdbapi.com/?i=tt3896198&apikey=802325f4"
 		const response = await fetch(
 			`http://www.omdbapi.com/?s=${search}&apikey=802325f4`,
 			{
