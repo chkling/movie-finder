@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Movies(props) {
 	return (
-		<div>
+		<div class="movie-card">
 			<p>{props.title}</p>
 			<p>{props.year}</p>
 			<img src={props.poster} />

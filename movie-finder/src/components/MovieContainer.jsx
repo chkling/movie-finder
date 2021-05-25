@@ -37,20 +37,30 @@ export default function MovieContainer() {
 	};
 
 	return (
-		<div>
-			<h1>Movie Container</h1>
-			<form onSubmit={onSubmit}>
-				<input
-					onChange={(e) => setSearch(e.target.value)}
-					value={search}
-					type="text"
-					placeholder="Movie Title"
-				/>
-				<input type="button" type="submit" />
-			</form>
-			{movies.map((movie) => (
-				<Movies title={movie.Title} poster={movie.Poster} />
-			))}
+		<div id="main-container">
+			<div class="search-container">
+				<h1 id="main-header">Movie Hunter</h1>
+				<form class="search-form" onSubmit={onSubmit}>
+					<input
+						class="movie-search-input"
+						onChange={(e) => setSearch(e.target.value)}
+						value={search}
+						type="text"
+						placeholder="Hunt by Movie Title"
+					/>
+					<input
+						class="movie-search-button"
+						type="button"
+						type="submit"
+						value="Search"
+					/>
+				</form>
+			</div>
+			<div class="movie-container">
+				{movies.map((movie) => (
+					<Movies title={movie.Title} poster={movie.Poster} />
+				))}
+			</div>
 
 			{/* <ul>
 				{movies.length === 0 ? (

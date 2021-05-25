@@ -3,7 +3,7 @@ import MovieContainer from "./components/MovieContainer";
 
 function App() {
 	return (
-		<div className="App">
+		<div>
 			<MovieContainer />
 		</div>
 	);
