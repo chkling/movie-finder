@@ -1,1 +1,1 @@
-# movie-finder
+# movie-hunter
