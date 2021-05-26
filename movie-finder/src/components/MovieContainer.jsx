@@ -7,7 +7,7 @@ export default function MovieContainer() {
 
 	const getMovies = async () => {
 		const response = await fetch(
-			`http://www.omdbapi.com/?s=${search}&apikey=802325f4`,
+			`http://www.omdbapi.com/?s=${search}&apikey=${process.env.REACT_APP_API_KEY}`,
 			{
 				headers: { Accept: "application/json" },
 			}
